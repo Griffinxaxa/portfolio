@@ -8,18 +8,45 @@
       scroll-behavior: smooth;
     }
     body {
-      font-family: 'Lato';
+      font-family: 'Space Mono', monospace;
       background: #f8fafc;
       color: #22223b;
       line-height: 1.6;
       min-height: 100vh;
     }
+    .terminal-prompt {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.2rem;
+      color: lime;
+      margin-bottom: 0.5rem;
+    }
+    .terminal-prompt::after {
+      content: '|';
+      animation: blink 1s steps(2, start) infinite;
+    }
+    
+    @keyframes blink {
+      to {
+        visibility: hidden;
+      }
+    }
+    
+    .headline {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-family: 'Space Mono', monospace;
+    }
     header {
-      background-image: linear-gradient(to left top, #ffbee3, #f4c3ee, #e9c9f7, #dccefc, #d1d3ff, #becef5, #aec8ea, #a0c2dd, #8ab0c2, #799ea7, #6c8b8e, #607876);
+      background-image: linear-gradient(to right bottom, #7c566c, #7d617a, #7e6c87, #7e7791, #80829a, #787d94, #70788f, #687389, #535f75, #3f4b62, #2c384f, #19263d);
       padding: .5rem 0 1rem 0;
       text-align: center;
       box-shadow: 0 2px 8px rgba(79,140,255,0.08);
       position: relative;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     }
     nav {
       position: sticky;
@@ -34,6 +61,7 @@
         gap: 1.2rem;
         list-style: none;
         padding: 0.5rem 0;
+
       }
       
       .contact-list li a {
