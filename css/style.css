@@ -9,7 +9,7 @@
     }
     body {
       font-family: 'Space Mono', monospace;
-      background: #f8fafc;
+      background: white;
       color: #22223b;
       line-height: 1.6;
       min-height: 100vh;
@@ -102,6 +102,7 @@
     nav a:hover::after, nav a:focus::after {
       width: 100%;
     }
+    
     main {
       max-width: 800px;
       margin: 0 auto;
@@ -112,7 +113,61 @@
       border-radius: 1rem;
       box-shadow: 0 2px 8px rgba(79,140,255,0.07);
       margin-bottom: 2rem;
-      padding: 2rem;
+      padding: 1.3rem;
+    }
+
+    #coursework details {
+      background: white;
+      border-radius: 8px;
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      border: 1px solid #e1e4e8;
+    }
+
+    #coursework summary {
+      list-style: none;
+      padding: 0.5em 0;
+      cursor: pointer;
+      font-weight: bold;
+      position: relative;
+    }
+
+    #coursework summary h2 {
+      display: inline;
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    #coursework summary::after {
+      content: "+";
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+      transition: all 0.3s ease;
+    }
+
+    #coursework details[open] summary::after {
+      content: "-";
+    }
+
+    #coursework details[open] {
+      padding-bottom: 1em;
+    }
+
+    #coursework p {
+      margin: 0.5em 0;
+      padding-left: 1em;
+    }
+
+    #coursework a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    #coursework a:hover {
+      text-decoration: underline;
     }
     h1 {
       font-size: 2.5rem;
@@ -195,13 +250,29 @@
       border-bottom: none;
     }
     footer {
-      background: #4f8cff;
-      color: #fff;
+      background: white;
+      color: black;
+      padding: 1.5rem;
       text-align: center;
-      padding: 1.5rem 0;
-      border-radius: 1rem 1rem 0 0;
-      box-shadow: 0 -2px 8px rgba(79,140,255,0.08);
-      font-size: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #4a6da7, #6d4aa7, #4a6da7);
+      background-size: 200% 100%;
+      animation: gradient 3s linear infinite;
+    }
+    
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
     }
     /* Responsive */
     @media (max-width: 600px) {
