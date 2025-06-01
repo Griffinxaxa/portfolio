@@ -1,338 +1,260 @@
+/* Base Reset */
 *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      font-size: 18px;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Space Mono', monospace;
-      background: white;
-      color: #22223b;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-    .terminal-prompt {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.2rem;
-      color: lime;
-      margin-bottom: 0.5rem;
-    }
-    .terminal-prompt::after {
-      content: '|';
-      animation: blink 1s steps(2, start) infinite;
-    }
-    /* Blinking red "LIVE" dot */
-    .live-dot {
-      height: 10px;
-      width: 10px;
-      background-color: red;
-      border-radius: 50%;
-      display: inline-block;
-      margin-left: 8px;
-      animation: blink 1s steps(2, start) infinite;
-      vertical-align: middle;
-    }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
 
-    
-    @keyframes blink {
-      to {
-        visibility: hidden;
-      }
-    }
-    
-    .headline {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 1rem;
-    }
-    header h1 {
-      font-family: 'Space Mono', monospace;
-    }
-    header {
-      background-image: linear-gradient(to right bottom, #7c566c, #7d617a, #7e6c87, #7e7791, #80829a, #787d94, #70788f, #687389, #535f75, #3f4b62, #2c384f, #19263d);
-      padding: .5rem 0 1rem 0;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(79,140,255,0.08);
-      position: relative;
-      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(79,140,255,0.06);
-      z-index: 100;
-    }
-    .contact-list {
-        display: flex;
-        justify-content: center;
-        gap: 1.2rem;
-        list-style: none;
-        padding: 0.5rem 0;
+body {
+  font-family: 'Space Mono', monospace;
+  background: #0f0f0f;
+  color: #d1d1d1;
+  line-height: 1.6;
+  min-height: 100vh;
+}
 
-      }
-      
-      .contact-list li a {
-        color: #22223b;
-        font-size: 1.5rem;
-        transition: color 0.3s;
-      }
-      
-      .contact-list li a:hover {
-        color: #4f8cff;
-      }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      list-style: none;
-      padding: 1rem 0;
-    }
-    nav a {
-      text-decoration: none;
-      color: #4f8cff;
-      font-weight: 700;
-      position: relative;
-      transition: color 0.3s;
-    }
-    nav a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: #4f8cff;
-      transition: width 0.3s;
-      margin: 0 auto;
-    }
-    nav a:hover, nav a:focus {
-      color: #22223b;
-    }
-    nav a:hover::after, nav a:focus::after {
-      width: 100%;
-    }
-    
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1rem 4rem 1rem;
-    }
-    section {
-      background: #fff;
-      border-radius: 1rem;
-      box-shadow: 0 2px 8px rgba(79,140,255,0.07);
-      margin-bottom: 2rem;
-      padding: 1.3rem;
-    }
+/* Terminal Prompt */
+.terminal-prompt {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.2rem;
+  color: rgb(122, 221, 92);
+  margin-bottom: 0.5rem;
+}
+.terminal-prompt::after {
+  content: '|';
+  animation: blink 1s steps(2, start) infinite;
+}
 
-    #coursework details {
-      background: white;
-      border-radius: 8px;
-      padding: 0.5em 1em;
-      margin: 1em 0;
-      border: 1px solid #e1e4e8;
-    }
+.live-dot {
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+}
 
-    #coursework summary {
-      list-style: none;
-      padding: 0.5em 0;
-      cursor: pointer;
-      font-weight: bold;
-      position: relative;
-    }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
-    #coursework summary h2 {
-      display: inline;
-      margin: 0;
-      font-size: 1.5em;
-    }
+.headline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
 
-    #coursework summary::after {
-      content: "";
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.2em;
-      transition: all 0.3s ease;
-    }
+header {
+  background-image: linear-gradient(to right bottom, #7c566c, #7d617a, #7e6c87, #7e7791, #80829a, #787d94, #70788f, #687389, #535f75, #3f4b62, #2c384f, #19263d);
+  padding: .7rem 0 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgb(44, 44, 44);
+  color: white;
+}
 
-    #coursework details[open] summary::after {
-      content: "-";
-    }
+nav {
+  position: sticky;
+  top: 0;
+  background: #1a1a1a;
+  box-shadow: 0 2px 8px rgb(44, 44, 44);
+  z-index: 100;
+}
 
-    #coursework details[open] {
-      padding-bottom: 1em;
-    }
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 1rem 0;
+}
+nav a {
+  text-decoration: none;
+  color: #4f8cff;
+  font-weight: 700;
+  position: relative;
+  transition: color 0.3s;
+}
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #4f8cff;
+  transition: width 0.3s;
+  margin: 0 auto;
+}
+nav a:hover, nav a:focus {
+  color: #ffffff;
+}
+nav a:hover::after, nav a:focus::after {
+  width: 100%;
+}
 
-    #coursework p {
-      margin: 0.5em 0;
-      padding-left: 1em;
-    }
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem 1rem;
+}
 
-    #coursework a {
-      color: #0366d6;
-      text-decoration: none;
-    }
-    #now summary {
-      list-style: none;
-      padding: 0.5em 0;
-      cursor: pointer;
-      font-weight: bold;
-      position: relative;
-    }
-    
-    #now summary h2 {
-      display: inline;
-      margin: 0;
-      font-size: 1.5em;
-    }
-    
-    #now summary::after {
-      content: "v";
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.2em;
-      transition: all 0.3s ease;
-    }
-    
-    #now details[open] summary::after {
-      content: "-";
-    }
-    
-    #now details[open] {
-      padding-bottom: 1em;
-    }
-    
+section {
+  background: #1a1a1a;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.3rem;
+}
 
-    #coursework a:hover {
-      text-decoration: underline;
-    }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #22223b;
-    }
-    h2 {
-      font-size: 1.7rem;
-      margin-bottom: 1rem;
-      color: #4f8cff;
-      font-weight: 700;
-    }
-    h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #22223b;
-    }
-    p, li {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      box-shadow: 0 4px 16px rgba(79,140,255,0.15);
-      margin-bottom: 1rem;
-    }
-    .skills-list, .contact-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      list-style: none;
-      margin-top: 1rem;
-    }
-    .skills-list li, .contact-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.1rem;
-      background: #e7f0ff;
-      padding: 0.5rem 1rem;
-      border-radius: 0.7rem;
-      box-shadow: 0 1px 4px rgba(79,140,255,0.05);
-      transition: background 0.3s;
-    }
-    .skills-list li:hover, .contact-list li:hover {
-      background: #d0e3ff;
-    }
-    .resume-link {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background: #4f8cff;
-      color: #fff;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 2px 8px rgba(79,140,255,0.08);
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-    .resume-link:hover {
-      background: #22223b;
-      box-shadow: 0 4px 16px rgba(79,140,255,0.12);
-      color: #fff;
-    }
-    .projects-list {
-      list-style: none;
-      padding-left: 0;
-    }
-    .projects-list li {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e7f0ff;
-    }
-    .projects-list li:last-child {
-      border-bottom: none;
-    }
-    footer {
-      background: white;
-      color: black;
-      padding: 1.5rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    footer::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #4a6da7, #6d4aa7, #4a6da7);
-      background-size: 200% 100%;
-      animation: gradient 3s linear infinite;
-    }
-    
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      main {
-        padding: 1rem 0.5rem 2rem 0.5rem;
-      }
-      section {
-        padding: 1rem;
-      }
-    }
+h1, h3 {
+  color: #ffffff;
+}
+h2 {
+  color: #4f8cff;
+}
+
+p, li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+details summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.summary-heading {
+  font-size: 1.5rem; /* or whatever size you want */
+  font-weight: bold;
+}
+/* Hide default triangle */
+details summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Add custom symbol before the text */
+.summary-heading::before {
+  content: "›";  /* Closed state */
+  margin-right: 0.5em;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+}
+main > section {
+  margin-bottom: 1.5rem; /* or whatever spacing you like */
+}
+
+
+/* When details is open, change symbol */
+details[open] .summary-heading::before {
+  content: "-";  /* Open state */
+}
+
+
+.contact-list,
+.skills-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0.5rem 0;
+  flex-wrap: wrap;
+}
+.contact-list li a {
+  color: #d1d1d1;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+.contact-list li a:hover {
+  color: grey;
+}
+.skills-list li,
+.contact-list li {
+  background: #292929;
+  padding: 0.5rem 1rem;
+  border-radius: 0.7rem;
+  border: solid grey 0.3px;
+  box-shadow: 0 1px 4px rgba(79,140,255,0.05);
+  color: #d1d1d1;
+}
+.skills-list li:hover,
+.contact-list li:hover {
+  background: #333;
+}
+
+.hero-img {
+  border: 4px solid #333;
+  box-shadow: 0 4px 16px rgb(44, 44, 44);
+}
+
+.resume-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #4f8cff;
+  color: #0f0f0f;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.08);
+}
+.resume-link:hover {
+  background: #ffffff;
+  color: #0f0f0f;
+}
+
+.projects-list {
+  list-style: none;
+  padding-left: 0;
+}
+.projects-list li {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+footer {
+  background: #0f0f0f;
+  color: #888;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4f8cff, #8e4fff, #4f8cff);
+  background-size: 200% 100%;
+  animation: gradient 3s linear infinite;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  main {
+    padding: 1rem 0.5rem 2rem 0.5rem;
+  }
+  section {
+    padding: 1rem;
+  }
+}
