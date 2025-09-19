@@ -5,480 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Griffin DesRoches</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-    /* Base Reset */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      font-size: 18px;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8f9fa;
-      color: #343a40;
-      line-height: 1.6;
-      min-height: 50vh;
-      overflow-x: hidden;
-    }
-
-    /* Tight vertical spacing */
-    section, .job, .project-item, .skills-list li {
-      margin-bottom: 1.5rem;
-    }
-
-    /* Compact header - FIXED */
-    header {
-      background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
-      padding: 1.5rem 1rem 1rem;
-      text-align: center;
-      position: relative;
-      border-bottom: 1px solid #dee2e6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Terminal Prompt */
-    .terminal-prompt {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.1rem;
-      color: #0d6efd;
-      margin-bottom: 0.2rem;
-      text-align: center;
-    }
-
-    .terminal-prompt::after {
-      content: '_';
-      animation: blink 1.2s steps(2, start) infinite;
-    }
-
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
-    }
-
-    /* FIXED HEADLINE CENTERING */
-    .headline {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 700;
-      color: #212529;
-      margin: 0.2rem auto;
-      text-align: center;
-      width: 100%;
-      max-width: 100%;
-      display: block;
-    }
-
-    .subtitle {
-      font-size: 1.1rem;
-      color: #495057;
-      text-align: center;
-      margin: 0.5rem auto;
-      max-width: 1000px;
-      width: 100%;
-      display: block;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #dee2e6;
-      z-index: 100;
-      padding: 0.5rem 0;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      list-style: none;
-      padding: 0.5rem 0;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #495057;
-      font-weight: 500;
-      position: relative;
-      transition: all 0.2s ease;
-      padding: 0.4rem 0.8rem;
-      border-radius: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    nav a::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: #0d6efd;
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    nav a:hover {
-      color: #0d6efd;
-      background: rgba(13, 110, 253, 0.05);
-    }
-
-    nav a:hover::before {
-      width: 80%;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1rem 3rem;
-    }
-
-    section {
-      background: #ffffff;
-      border: 1px solid #e9ecef;
-      border-radius: 0.8rem;
-      padding: 1.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.2s ease;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    section:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      border-color: #ced4da;
-    }
-
-    h2 {
-      color: #0d6efd;
-      font-size: 1.6rem;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #e9ecef;
-    }
-
-    h2 i {
-      color: #495057;
-      font-size: 1.4rem;
-    }
-
-    h3 {
-      color: #212529;
-      font-size: 1.25rem;
-      margin-bottom: 0.4rem;
-    }
-
-    p {
-      margin-bottom: 0.8rem;
-      color: #495057;
-    }
-
-    .job {
-      padding: 1.2rem;
-      border-left: 3px solid #0d6efd;
-      background: rgba(13, 110, 253, 0.03);
-      border-radius: 0.5rem;
-      transition: all 0.2s ease;
-    }
-
-    .job:hover {
-      background: rgba(13, 110, 253, 0.06);
-      transform: translateX(3px);
-    }
-
-    .contact-list {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      list-style: none;
-      padding: 0.8rem 0;
-      flex-wrap: wrap;
-      margin: 0 auto;
-    }
-
-    .contact-list li {
-      background: rgba(13, 110, 253, 0.05);
-      border: 1px solid rgba(13, 110, 253, 0.1);
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-    }
-
-    .contact-list li:hover {
-      transform: translateY(-2px) scale(1.05);
-      background: rgba(13, 110, 253, 0.1);
-      box-shadow: 0 4px 8px rgba(13, 110, 253, 0.1);
-    }
-
-    .contact-list li a {
-      color: #0d6efd;
-      font-size: 1.3rem;
-      transition: color 0.2s ease;
-    }
-
-    .contact-list li:hover a {
-      color: #0a58ca;
-    }
-
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.8rem;
-      list-style: none;
-      padding: 0;
-    }
-
-    .skills-list li {
-      background: #ffffff;
-      padding: 0.9rem;
-      border-radius: 0.6rem;
-      border: 1px solid #e9ecef;
-      transition: all 0.2s ease;
-    }
-
-    .skills-list li:hover {
-      background: rgba(13, 110, 253, 0.03);
-      transform: translateY(-2px);
-      border-color: #ced4da;
-    }
-
-    /* Now section styling */
-    .now-section {
-      position: relative;
-    }
-
-    .live-dot {
-      height: 10px;
-      width: 10px;
-      background: #dc3545;
-      border-radius: 50%;
-      display: inline-block;
-      margin-left: 8px;
-      vertical-align: middle;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.7; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    details {
-      cursor: pointer;
-    }
-
-    details summary {
-      display: flex;
-      align-items: center;
-      list-style: none;
-      padding: 1rem;
-      background: rgba(13, 110, 253, 0.03);
-      border-radius: 0.6rem;
-      transition: all 0.2s ease;
-      border: 1px solid #e9ecef;
-    }
-
-    details summary:hover {
-      background: rgba(13, 110, 253, 0.06);
-    }
-
-    details summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .summary-heading {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #212529;
-    }
-
-    .summary-heading::before {
-      content: "▶";
-      margin-right: 0.75rem;
-      font-size: 0.8em;
-      transition: transform 0.3s ease;
-      color: #0d6efd;
-    }
-
-    details[open] .summary-heading::before {
-      transform: rotate(90deg);
-    }
-
-    .now-content, .coursework-content {
-      padding: 1.2rem;
-      margin-top: 0.8rem;
-      background: #f8f9fa;
-      border-radius: 0.6rem;
-      border-left: 3px solid #0d6efd;
-    }
-
-    .now-content p, .coursework-content p {
-      margin-bottom: 0.8rem;
-      padding-left: 0.5rem;
-    }
-
-    .now-content strong {
-      color: #198754;
-    }
-
-    /* Project styling */
-    .project-item {
-      padding: 1.2rem;
-      background: #ffffff;
-      border-radius: 0.6rem;
-      border-left: 3px solid #6f42c1;
-      transition: all 0.2s ease;
-    }
-
-    .project-item:hover {
-      background: rgba(111, 66, 193, 0.03);
-      transform: translateX(3px);
-    }
-
-    /* Resume link */
-    .resume-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background: #0d6efd;
-      color: #ffffff;
-      border-radius: 0.6rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-
-    .resume-link:hover {
-      transform: translateY(-2px);
-      background: #0b5ed7;
-      box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
-    }
-
-    footer {
-      background: #e9ecef;
-      color: #6c757d;
-      padding: 1.5rem;
-      text-align: center;
-      position: relative;
-      margin-top: 2rem;
-      border-top: 1px solid #dee2e6;
-    }
-
-    footer p {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
-
-    /* Touch-friendly targets */
-    nav a, .contact-list li, details summary, .resume-link {
-      min-height: 40px;
-      min-width: 40px;
-    }
-
-    /* Better text scaling */
-    html {
-      font-size: clamp(16px, 3.5vw, 18px);
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      nav ul {
-        gap: 0.8rem;
-        padding: 0.5rem;
-      }
-      
-      nav a {
-        font-size: 0.85rem;
-        padding: 0.5rem;
-      }
-      
-      main {
-        padding: 1.5rem 1rem 2.5rem;
-      }
-      
-      section {
-        padding: 1.2rem;
-        margin-bottom: 1.2rem;
-      }
-      
-      h2 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-      }
-      
-      .contact-list {
-        gap: 0.8rem;
-      }
-      
-      .contact-list li {
-        width: 42px;
-        height: 42px;
-      }
-      
-      .skills-list {
-        grid-template-columns: 1fr;
-      }
-      
-      .job, .project-item {
-        padding: 1rem;
-      }
-      
-      .now-content, .coursework-content {
-        padding: 1rem;
-      }
-      
-      .resume-link {
-        padding: 0.8rem 1.2rem;
-        font-size: 0.95rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header {
-        padding: 1rem 0.5rem 0.5rem;
-      }
-      
-      .headline {
-        font-size: 1.6rem;
-      }
-      
-      nav ul {
-        grid-template-columns: repeat(4, auto);
-        gap: 0.4rem;
-      }
-      
-      nav a {
-        font-size: 0.8rem;
-        padding: 0.5rem;
-      }
-      
-      .summary-heading {
-        font-size: 1.15rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/download.jpeg">
 </head>
 <body>
   <header id="about">
@@ -507,16 +37,22 @@
 
   <main>
     <section id="about">
-      <h2><i class="fas fa-user"></i> About</h2>
-      <p>
-        Rising freshman at the University of Massachusetts Amherst studying statistics and computer science. Interested in Machine learning, natural language processing, and statistical problem solving. From Cambridge, MA.
-      </p>
+      <details open>
+        <summary>
+          <span class="summary-heading"><i class="fas fa-user"></i> About</span>
+        </summary>
+        <div class="section-content">
+          <p>
+            Freshman at the University of Massachusetts Amherst studying Statistics and Computer science. Interested in machine learning, startup culture and statistical problem solving. Trying to absorb new information every day! From Cambridge, MA.
+          </p>
+        </div>
+      </details>
     </section>
 
     <section id="now" class="now-section">
       <details>
         <summary>
-          <span class="summary-heading">What I'm Up To Now <span class="live-dot"></span></span>
+          <span class="summary-heading"><i class="fa-solid fa-question"></i>What I'm Up To Now <span class="live-dot"></span></span>
         </summary>
         <div class="now-content">
           <p><strong>Summer 2025:</strong> Moving to Old Orchard Beach, ME for the summer, should hopefully build some character!?</p>
@@ -531,88 +67,142 @@
     </section>
 
     <section id="work">
-      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
-      
-      <div class="job">
-        <h3>Software Engineering Intern</h3>
-        <p><em>Dana Farber Cancer Institute • Boston, MA • Feb 2025 – Jun 2025</em></p>
-      </div>
+      <details>
+        <summary>
+          <span class="summary-heading"><i class="fas fa-briefcase"></i> Work Experience</span>
+        </summary>
+        <div class="section-content">
+          <details class="job-details">
+            <summary class="job-summary">
+              <span class="job-title">Software Engineering Intern</span>
+              <span class="job-company">Dana Farber Cancer Institute</span>
+            </summary>
+            <div class="job-content">
+              <p><em>Boston, MA • Feb 2025 – May 2025</em></p>
+            </div>
+          </details>
 
-      <div class="job">
-        <h3>AP Physics Teaching Assistant</h3>
-        <p><em>Cambridge Public Schools • Cambridge, MA • Sep 2024 – Jan 2025</em></p>
-      </div>
+          <details class="job-details">
+            <summary class="job-summary">
+              <span class="job-title">AP Physics Teaching Assistant</span>
+              <span class="job-company">Cambridge Public Schools</span>
+            </summary>
+            <div class="job-content">
+              <p><em>Cambridge, MA • Sep 2024 – Jan 2025</em></p>
+            </div>
+          </details>
 
-      <div class="job">
-        <h3>Information Technology Intern</h3>
-        <p><em>City of Somerville • Somerville, MA • Jun 2024 – Sep 2024</em></p>
-      </div>
+          <details class="job-details">
+            <summary class="job-summary">
+              <span class="job-title">Information Technology Intern</span>
+              <span class="job-company">City of Somerville</span>
+            </summary>
+            <div class="job-content">
+              <p><em>Somerville, MA • Jun 2024 – Sep 2024</em></p>
+            </div>
+          </details>
 
-      <div class="job">
-        <h3>Software Engineering Intern</h3>
-        <p><em>Innovators for Purpose • Cambridge, MA • Jul 2023 – Nov 2023</em></p>
-      </div>
+          <details class="job-details">
+            <summary class="job-summary">
+              <span class="job-title">Software Engineering Intern</span>
+              <span class="job-company">Innovators for Purpose</span>
+            </summary>
+            <div class="job-content">
+              <p><em>Cambridge, MA • Jul 2023 – Nov 2023</em></p>
+            </div>
+          </details>
+        </div>
+      </details>
     </section>
 
     <section id="projects">
-      <h2><i class="fas fa-code"></i> Projects</h2>
-      
-      <div class="project-item">
-        <h3>TLDR - Intelligent Summarization Platform</h3>
-        <p><strong>Technologies:</strong> NLP, AI</p>
-        <p>An advanced summarization system designed to distill complex content from articles, videos, and textbooks into concise, meaningful summaries. Currently exploring transformer architectures and attention mechanisms for optimal content extraction.</p>
-        <p><em>Status: Work in Progress</em></p>
-      </div>
-
-      <div class="project-item">
-        <h3>CS2 Match Forecaster</h3>
-        <p><strong>Technologies:</strong> Machine Learning, Web Scraping, Statistical Analysis</p>
-        <p>A predictive analytics platform for professional Counter-Strike 2 matches, leveraging comprehensive statistics scraped from HLTV.org. Implementing ensemble methods and feature engineering to achieve competitive prediction accuracy.</p>
-        <p><em>Status: Work in Progress</em></p>
-      </div>
+      <details>
+        <summary>
+          <span class="summary-heading"><i class="fas fa-code"></i> Projects</span>
+        </summary>
+        <div class="section-content">
+          <div class="project-item">
+            <h3>CS2 Match Forecaster</h3>
+            <p><strong>Technologies:</strong> Machine Learning</p>
+            <p>A predictive analytics platform for professional Counter-Strike 2 matches, leveraging comprehensive statistics scraped from HLTV.org. Implementing ensemble methods and feature engineering to achieve competitive prediction accuracy.</p>
+            <p><em>Status: Work in Progress</em></p>
+          </div>
+        </div>
+      </details>
     </section>
 
     <section id="skills">
-      <h2><i class="fas fa-tools"></i> Technical Skills</h2>
-      <ul class="skills-list">
-        <li><strong>Programming Languages:</strong> Java, Python, R, JavaScript, HTML/CSS</li>
-        <li><strong>Development Tools:</strong> Node.js, Express, Git, VS Code, PyCharm, R Studio, IntelliJ</li>
-        <li><strong>Systems & Environment:</strong> Unix Shell, Vim/Neovim, Windows, macOS, Linux</li>
-        <li><strong>Data Science & ML:</strong> Pandas, NumPy, SuperLearner, Shiny</li>
-        <li><strong>Languages:</strong> English (Native), Spanish (Intermediate), Romanian (Beginner)</li>
-        <li><strong>Deployment:</strong> Vercel</li>
-      </ul>
+      <details>
+        <summary>
+          <span class="summary-heading"><i class="fas fa-tools"></i> Technical Skills</span>
+        </summary>
+        <div class="section-content">
+          <ul class="skills-list">
+            <li><strong>Programming Languages:</strong> Java, Python, R, HTML/CSS</li>
+            <li><strong>Development Tools:</strong> Node.js, Express, Git, VS Code, PyCharm, R Studio, IntelliJ</li>
+            <li><strong>Systems & Environment:</strong> Unix Shell, Vim/Neovim, Windows, macOS, Linux</li>
+            <li><strong>Data Science & ML:</strong> Pandas, NumPy, SuperLearner, Shiny</li>
+            <li><strong>Languages:</strong> English (Native), Spanish (Intermediate), Romanian (Beginner)</li>
+            <li><strong>Deployment:</strong> Vercel</li>
+          </ul>
+        </div>
+      </details>
     </section>
 
     <section id="coursework">
       <details>
         <summary>
-          <span class="summary-heading">Academic Coursework</span>
+          <span class="summary-heading"><i class="fas fa-graduation-cap"></i> Academic Coursework</span>
         </summary>
         <div class="coursework-content">
           <p><strong>Summer 2025</strong></p>
-          <p><a href="https://people.umass.edu/~esarfoampons/math235coursewide.html" target="_blank">MAT 235</a>: Introduction to Linear Algebra</p>
+          <p>MAT 235: Introduction to Linear Algebra</p>
           
           <p><strong>Fall 2025</strong></p>
-          <p><a href="https://www.coursicle.com/umass/courses/STATISTC/310/" target="_blank">STAT 310</a>: Fundamental Concepts of Statistics</p>
-          <p><a href="https://www.umass.edu/mathematics-statistics/sites/default/files/2024-10/S315_Typical_Syllabus_Redacted_0.pdf" target="_blank">STAT 315</a>: Statistics I</p>
-          <p><a href="https://www.umass.edu/mathematics-statistics/sites/default/files/2024-10/Math233_typical_Syllabus_Redacted_0.pdf" target="_blank">MATH 233</a>: Multivariate Calculus</p>
-          <p><a href="https://www.studocu.com/en-us/document/university-of-massachusetts-amherst/introduction-to-microeconomics/econ-103-spring-2023-syllabus/46555743" target="_blank">ECON 103</a>: Microeconomics</p>
+          <p>MAT 132: Calculus II</p>
+          <p>CICS 160: Object Oriented Programming</p>
+          <p>Info 248: Intro. Data Science</p>
+          <p>CICS 250: Intro. Computation (Discrete Math)</p>
         </div>
       </details>
     </section>
 
     <section id="resume">
-      <h2><i class="fas fa-file-alt"></i> Resume</h2>
-      <a href="images/Griffinsresumemay13th2025.pdf" class="resume-link" target="_blank">
-        <i class="fa-solid fa-download"></i> View Resume (PDF)
-      </a>
+      <details>
+        <summary>
+          <span class="summary-heading"><i class="fas fa-file-alt"></i> Resume</span>
+        </summary>
+        <div class="section-content">
+          <a href="images/Griffinsresumemay13th2025.pdf" class="resume-link" target="_blank">
+            <i class="fa-solid fa-download"></i> View Resume (PDF)
+          </a>
+        </div>
+      </details>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Griffin DesRoches. All rights reserved.</p>
-    <p>Special thanks to Dr. Wu & Tupper!</p>
+    <p>&copy; 2025 Griffin DesRoches. Special thanks to Dr. Wu & Dr. Tupper!</p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+          
+          if (targetSection) {
+            const detailsElement = targetSection.querySelector('details');
+            if (detailsElement && !detailsElement.open) {
+              detailsElement.open = true;
+            }
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
