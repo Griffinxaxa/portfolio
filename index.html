@@ -9,14 +9,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="images/download.jpeg">
+  <audio id="mySound" src="sounds/Griffin_De_roasche_Brian.wav" preload="auto"></audio>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header id="about">
     <h1 class="terminal-prompt">user@Griffin:~$</h1>
-    <h2 class="headline">Hi, I'm Griffin DesRoches</h2>
+    <h2 class="headline">Hi, I'm <span class="clickable-element">Griffin DesRoches</span> <i class="fa-solid fa-volume-low fa-2xl" style="color: #74C0FC; font-size: 1px;"></i></h2>
     <p class="subtitle">Freshman @ UMass Amherst • Statistics & Computer Science</p>
     <ul class="contact-list">
-      <li><a href="mailto:your@email.com" target="_blank" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
+      <li><a href="mailto:gmdesroches@umass.edu" target="_blank" title="gmdesroches@umass.edu"><i class="fa-solid fa-envelope"></i></a></li>
       <li><a href="https://linkedin.com/in/griffindesroches" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
       <li><a href="https://github.com/griffinxaxa" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
       <li><a href="https://instagram.com/griffindesroches" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
@@ -43,7 +47,7 @@
         </summary>
         <div class="section-content">
           <p>
-            Freshman at the University of Massachusetts Amherst studying Statistics and Computer science. Interested in machine learning, startup culture and statistical problem solving. Trying to absorb new information every day! From Cambridge, MA.
+            Freshman at the University of Massachusetts Amherst studying Statistics and Computer science. Interested in machine learning, startup culture and statistical problem solving. Trying to absorb new information every day! From Cambridge, MA. (he/him/his)<sup><a href="https://pronouns.org/he-him">1</a></sup>
           </p>
         </div>
       </details>
@@ -55,13 +59,7 @@
           <span class="summary-heading"><i class="fa-solid fa-question"></i>What I'm Up To Now <span class="live-dot"></span></span>
         </summary>
         <div class="now-content">
-          <p><strong>Summer 2025:</strong> Moving to Old Orchard Beach, ME for the summer, should hopefully build some character!?</p>
-          <p><strong>Current Focus:</strong> Working on an NLP/AI project while taking Linear Algebra at UMass. Considering adding Calculus III to my summer coursework and planning some interview preparation.</p>
-          <p><strong>Recent Milestones:</strong></p>
-          <p><strong>7/28/2025:</strong> College in exactly a month...</p>
-          <p><strong>7/13/2025:</strong> Started linear algebra - it's challenging but fascinating! The mathematical foundations are really clicking.</p>
-          <p><strong>6/10/2025:</strong> Explored "vibecoding" with Cursor, creating a tool that generates ASCII file directories from GitHub repos. The results exceeded my expectations!</p>
-          <p><strong>6/9/2025:</strong> Completed my first LeetCode problems (tackled 3 in one day) - the problem-solving addiction is real!</p>
+          <p><strong>September 2025:</strong> I am really trying to choose if I want to pursue breadth or depth in my degree, I was thinking of doing a double major in Computer Science. This has really been the most excited I have been to build projects, of course this happens right as I start getting swamped by college work, very conflicted right now!</p>
         </div>
       </details>
     </section>
@@ -186,8 +184,18 @@
   </footer>
 
   <script>
+    
     document.addEventListener('DOMContentLoaded', function() {
       const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      const clickableElements = document.querySelectorAll('.clickable-element')
+      const sound = document.getElementById('mySound')
+
+      clickableElements.forEach(element => {
+        element.addEventListener('click', function() {
+          sound.currentTime = 0;
+          sound.play();
+        });
+      });
       
       navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
