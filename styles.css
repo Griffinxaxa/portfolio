@@ -33,14 +33,19 @@ html {
 
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background: var(--base3);
-  color: var(--base00);
+  background: #ffffff;
+  color: #1a1a1a;
   line-height: 1.7;
   min-height: 100vh;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.clickable-element:hover{
+  text-decoration: underline;
+  color: #555;
+}
+
 .clickable-element:hover{
   text-decoration: underline;
   color: #555;
@@ -91,6 +96,15 @@ header {
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
+.clickable-element: hover {
+
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
 .subtitle {
   font-size: 1.2rem;
@@ -122,6 +136,7 @@ nav ul {
   margin: 0 auto;
   overflow-x: auto;
 }
+
 
 nav a {
   text-decoration: none;
@@ -452,8 +467,8 @@ footer {
   padding: 1.5rem;
   text-align: center;
   position: relative;
-  margin-top: 2rem;
-  border-top: 1px solid var(--base2);
+  margin-top: 1rem;
+  border-top: 1px solid #f0f0f0;
 }
 
 footer p {

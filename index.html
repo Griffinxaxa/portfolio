@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="images/download.jpeg">
+  <audio id="mySound" src="sounds/Griffin_De_roasche_Brian.wav" preload="auto"></audio>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header id="about">
@@ -17,7 +21,7 @@
     <h2 class="headline">Hi, I'm <span class="clickable-element">Griffin DesRoches</span> <i class="fa-solid fa-volume-low fa-2xl" style="color: #74C0FC; font-size: 1px;"></i></h2>
     <p class="subtitle">Freshman @ UMass Amherst • Statistics & Computer Science</p>
     <ul class="contact-list">
-      <li><a href="mailto:your@email.com" target="_blank" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
+      <li><a href="mailto:gmdesroches@umass.edu" target="_blank" title="gmdesroches@umass.edu"><i class="fa-solid fa-envelope"></i></a></li>
       <li><a href="https://linkedin.com/in/griffindesroches" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
       <li><a href="https://github.com/griffinxaxa" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
       <li><a href="https://instagram.com/griffindesroches" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
@@ -193,7 +197,6 @@
           sound.play();
         });
       });
-      
       
       navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
