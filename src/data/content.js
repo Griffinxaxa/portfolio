@@ -4,9 +4,9 @@ export const profile = {
   name: 'Griffin DesRoches',
   prompt: 'user@Griffin:~$',
   subtitle: 'Freshman @ UMass Amherst • Statistics & Computer Science',
-  email: 'griffinhaha1@gmail.com',
+  email: 'gmdesroches@umass.edu',
   links: [
-    { href: 'mailto:griffinhaha1@gmail.com', icon: 'envelope', label: 'Email', color: 'yellow' },
+    { href: 'mailto:gmdesroches@umass.edu', icon: 'envelope', label: 'Email', color: 'yellow' },
     { href: 'https://linkedin.com/in/griffindesroches', icon: 'linkedin', label: 'LinkedIn', color: 'blue' },
     { href: 'https://github.com/griffinxaxa', icon: 'github', label: 'GitHub', color: 'violet' },
     { href: 'https://instagram.com/griffindesroches', icon: 'instagram', label: 'Instagram', color: 'magenta' },
