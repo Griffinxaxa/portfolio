@@ -19,10 +19,13 @@
     }
 
     main {
-      max-width: 650px;
+      max-width: 900px;
+      min-height: 100vh;
       margin: 0;
-      padding: 48px 0 48px 48px;
+      padding: 48px 24px 48px 48px;
       text-align: left;
+      display: flex;
+      flex-direction: column;
     }
 
     p {
@@ -37,6 +40,13 @@
       text-underline-offset: 2px;
     }
 
+    .resume-embed {
+      width: 100%;
+      flex: 1;
+      min-height: 75vh;
+      border: 1px solid #eeeeee;
+    }
+
     @media (max-width: 600px) {
       main {
         padding: 40px 24px 48px 40px;
@@ -46,16 +56,8 @@
 </head>
 <body>
   <main>
-    <p>Downloading. If it doesn't start, <a href="../images/DesRoches_SWE.pdf" download="DesRoches_SWE.pdf">click here</a>.</p>
     <p><a href="../">back</a></p>
+    <embed class="resume-embed" src="../images/DesRoches_SWE.pdf" type="application/pdf">
   </main>
-  <script>
-    var a = document.createElement('a');
-    a.href = '../images/DesRoches_SWE.pdf';
-    a.download = 'DesRoches_SWE.pdf';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-  </script>
 </body>
 </html>
