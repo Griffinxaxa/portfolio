@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Griffin DesRoches</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #ffffff;
+      color: #000000;
+      font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 650px;
+      margin: 0;
+      padding: 48px 0 48px 48px;
+      text-align: left;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    a {
+      color: #000000;
+      text-decoration: underline;
+      text-decoration-color: #8b2942;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 40px 24px 48px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p>Downloading. If it doesn't start, <a href="../images/DesRoches_SWE.pdf" download="DesRoches_SWE.pdf">click here</a>.</p>
+    <p><a href="../">back</a></p>
+  </main>
+  <script>
+    var a = document.createElement('a');
+    a.href = '../images/DesRoches_SWE.pdf';
+    a.download = 'DesRoches_SWE.pdf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  </script>
+</body>
+</html>
