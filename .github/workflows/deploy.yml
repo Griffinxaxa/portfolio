@@ -21,7 +21,7 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p site/images site/resume
-          cp index.html site/
+          cp index.html site.css tokens.css base.css site/
           cp resume/index.html site/resume/
           cp images/DesRoches_SWE.pdf site/images/
 

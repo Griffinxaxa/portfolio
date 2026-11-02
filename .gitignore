@@ -4,3 +4,9 @@ dist
 .vite
 .vercel
 .env*
+
+.hallmark/
+before/
+before.txt
+before.json
+compare.html
