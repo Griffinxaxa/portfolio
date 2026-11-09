@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo of me — Griffin DesRoches</title>
-  <meta name="description" content="A photo of Griffin DesRoches taken by Addison R. at Dave's Hot Chicken in Hadley, MA.">
+  <title>Photos — Griffin DesRoches</title>
+  <meta name="description" content="A few photos of Griffin DesRoches and friends.">
   <style>
     * {
       margin: 0;
@@ -23,19 +23,24 @@
       max-width: 960px;
       min-height: 100vh;
       margin: 0;
-      padding: 48px 48px 48px 48px;
+      padding: 48px;
       text-align: left;
     }
 
     .back {
-      margin-bottom: 24px;
+      margin-bottom: 32px;
       font-size: 16px;
     }
 
-    .layout {
+    .entry {
       display: flex;
       align-items: flex-start;
       gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
     }
 
     .photo {
@@ -71,9 +76,10 @@
         padding: 40px 24px 48px 40px;
       }
 
-      .layout {
+      .entry {
         flex-direction: column;
         gap: 20px;
+        margin-bottom: 40px;
       }
 
       .photo {
@@ -90,7 +96,8 @@
 <body>
   <main>
     <p class="back"><a href="../">back</a></p>
-    <div class="layout">
+
+    <div class="entry">
       <img
         class="photo"
         src="../images/photo-of-me.jpg"
@@ -102,6 +109,34 @@
         This is a photo I like of myself, my buddy
         <a href="https://www.linkedin.com/in/addison-rosenblum-460342373/">Addison R.</a>
         took it of me in the Dave's Hot Chicken (really overpriced food btw) in Hadley MA. Sadly my friend Addison is transferring out of UMass this spring ;/ I also realized there are no actual photos of me when you search up my name so maybe this photo will show up.
+      </p>
+    </div>
+
+    <div class="entry">
+      <img
+        class="photo"
+        src="../images/photo-rec.jpg"
+        alt="Griffin DesRoches at the UMass rec center, photographed by Aayan Ahmad."
+        width="1200"
+        height="1600"
+      >
+      <p class="copy">
+        This silly photo was taken by my dear friend Aayan Ahmad. Do not fret, I am actually quite happy in this photo, even though my face doesn't show it. The photo was taken at the UMass rec center, I spend a lot of time there, it is a lot of fun. Aayan is really cracked, he studies physics and hes working on his own quantum stuff I will never understand :^)
+      </p>
+    </div>
+
+    <div class="entry">
+      <img
+        class="photo"
+        src="../images/photo-dog.jpg"
+        alt="Hurman Nasser's dog in the back seat of a car."
+        width="1600"
+        height="1200"
+      >
+      <p class="copy">
+        This is my buddy
+        <a href="https://www.linkedin.com/in/hurmann-nasser-60ab04377/">Hurman Nasser</a>'s
+        dog it was a pretty big dog and I drove like 100 miles with him next to me he was pretty chill.
       </p>
     </div>
   </main>
