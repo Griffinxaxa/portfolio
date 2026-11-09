@@ -20,10 +20,12 @@ jobs:
 
       - name: Prepare site
         run: |
-          mkdir -p site/images site/resume
+          mkdir -p site/images site/resume site/photo-of-me
           cp index.html site/
           cp resume/index.html site/resume/
+          cp photo-of-me/index.html site/photo-of-me/
           cp images/DesRoches_SWE.pdf site/images/
+          cp images/photo-of-me.jpg site/images/
 
       - name: Deploy to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
