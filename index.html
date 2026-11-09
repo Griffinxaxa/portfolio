@@ -42,33 +42,40 @@
 
     .photo-box {
       display: inline-block;
-      width: 88px;
-      margin: 8px 0 8px;
+      width: 140px;
+      margin: 12px 0 8px;
       text-decoration: none;
       color: inherit;
-      transform: rotate(2deg);
-      transition: transform 160ms ease;
-    }
-
-    .photo-box:hover,
-    .photo-box:focus-visible {
-      transform: rotate(0deg) translateY(-2px);
       outline: none;
     }
 
-    .photo-box:focus-visible .photo-box-frame {
+    .photo-box:focus-visible .photo-box-stage {
       outline: 2px solid #8b2942;
-      outline-offset: 3px;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .photo-box-stage {
+      position: relative;
+      display: block;
+      width: 88px;
+      height: 108px;
+      margin: 0 auto;
     }
 
     .photo-box-frame {
-      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 88px;
       background: linear-gradient(180deg, #fbf9f5 0%, #f3efe8 100%);
       padding: 5px 5px 18px;
       border-radius: 3px;
       box-shadow:
         0 1px 2px rgba(60, 40, 20, 0.22),
         0 8px 16px -6px rgba(60, 40, 20, 0.28);
+      transition: transform 200ms ease;
+      transform-origin: 50% 90%;
     }
 
     .photo-box-frame img {
@@ -80,9 +87,39 @@
       background: #e8e4dc;
     }
 
+    .photo-box-frame:nth-child(1) {
+      z-index: 1;
+      transform: rotate(-8deg) translate(-10px, 4px);
+    }
+
+    .photo-box-frame:nth-child(2) {
+      z-index: 2;
+      transform: rotate(1deg);
+    }
+
+    .photo-box-frame:nth-child(3) {
+      z-index: 3;
+      transform: rotate(7deg) translate(10px, 2px);
+    }
+
+    .photo-box:hover .photo-box-frame:nth-child(1),
+    .photo-box:focus-visible .photo-box-frame:nth-child(1) {
+      transform: rotate(-14deg) translate(-18px, 2px);
+    }
+
+    .photo-box:hover .photo-box-frame:nth-child(2),
+    .photo-box:focus-visible .photo-box-frame:nth-child(2) {
+      transform: rotate(0deg) translateY(-4px);
+    }
+
+    .photo-box:hover .photo-box-frame:nth-child(3),
+    .photo-box:focus-visible .photo-box-frame:nth-child(3) {
+      transform: rotate(12deg) translate(18px, 0);
+    }
+
     .photo-box-label {
       display: block;
-      margin-top: 6px;
+      margin-top: 14px;
       font-size: 11px;
       letter-spacing: 0.02em;
       color: #666666;
@@ -123,11 +160,19 @@
     <p>I'm a Math, Statistics, and CS student at UMass and an incoming SWE at RTX. My past experience includes SWE roles at Fisheye Software and elsewhere, as well as developing statistical software for causal inference. I'm highly interested in Bayesian statistics, statistical inference, and financial mathematics.</p>
     <p>Connect with me on <a href="https://github.com/Griffinxaxa">github</a>, <a href="https://x.com/GriffinDesr">x</a>, <a href="https://www.linkedin.com/in/griffindesroches/">linkedin</a>, or at desrochesgriffin at gmail dot com!</p>
     <p>Please feel free to message me about anything, I love making new pen pals!</p>
-    <a class="photo-box" href="photo-of-me/" aria-label="A photo of me">
-      <span class="photo-box-frame">
-        <img src="images/photo-of-me.jpg" alt="Griffin DesRoches" width="120" height="120">
+    <a class="photo-box" href="photo-of-me/" aria-label="Photos of me">
+      <span class="photo-box-stage">
+        <span class="photo-box-frame">
+          <img src="images/photo-rec.jpg" alt="" width="120" height="120">
+        </span>
+        <span class="photo-box-frame">
+          <img src="images/photo-dog.jpg" alt="" width="120" height="120">
+        </span>
+        <span class="photo-box-frame">
+          <img src="images/photo-of-me.jpg" alt="Griffin DesRoches" width="120" height="120">
+        </span>
       </span>
-      <span class="photo-box-label">photo box</span>
+      <span class="photo-box-label">photo box · 3 prints</span>
     </a>
     <p class="easter-egg">If you're REALLY interested in what I do, you can see my <a href="resume/">resume</a> here.</p>
   </main>
